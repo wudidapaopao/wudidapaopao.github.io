@@ -3,7 +3,7 @@ analytics-id: #leave blank to not use Analytics
 
 #Subtitle
 subtitle:
-  active: false
+  active: true
   text: Wudidapaopao
 
 #Nav 

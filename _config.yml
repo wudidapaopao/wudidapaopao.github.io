@@ -1,9 +1,9 @@
 # Site settings
-title: Wudidapaopao
+title: 无敌大泡泡
 url:  "https://wudidapaopao.github.io"
 baseurl: "/"
 author:
-  name: "Wudidapaopao"
+  name: "无敌大泡泡"
   email: "664920313@qq.com"
 permalink: /:year/:month/:day/:title:output_ext
 
