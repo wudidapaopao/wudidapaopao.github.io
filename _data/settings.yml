@@ -15,7 +15,7 @@ nav:
 
 #Featured images in homepage
 featured-img:
-  active: false
+  active: true
 
 #Show categories at the end of posts
 categories:
@@ -23,7 +23,7 @@ categories:
 
 #Show date and read time under the post title
 date-under-post:
-  active: false
+  active: true
 
 #Use MathJAX
 mathjax:
