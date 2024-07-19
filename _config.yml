@@ -1,5 +1,4 @@
 # Site settings
-destination: docs
 title: YAMT
 description: "Yet Another Minimal Theme"
 url:  "https://pandasekh.github.io/Jekyll-YAMT/" # Actual base url of the website
