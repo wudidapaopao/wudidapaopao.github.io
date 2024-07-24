@@ -62,7 +62,7 @@ customexcerpt: "Amazon DynamoDB-A Scalable, Predictably Performant, and Fully Ma
 
 `DynamoDB`提供的接口很简单，增删改查，这些接口都可以带一个`condition`，比如`pk`或者`secondary index`。
 
-<img title="" src="../assets/img/2024-07-23-amazon-dynamodb/1.jpeg" alt="" data-align="center" width="545">
+<img title="" src="https://wudidapaopao.github.io/assets/img/2024-07-23-amazon-dynamodb/1.jpeg" alt="" data-align="center" width="545">
 
 <br>
 
@@ -74,7 +74,7 @@ customexcerpt: "Amazon DynamoDB-A Scalable, Predictably Performant, and Fully Ma
 
 可以看到上面这一套支持事务`ACID`的`share nothing`存储架构和`TIDB`以及`OB`基本很像。
 
-<img title="" src="../assets/img/2024-07-23-amazon-dynamodb/2.jpeg" alt="" data-align="center" width="514">
+<img title="" src="https://wudidapaopao.github.io/assets/img/2024-07-23-amazon-dynamodb/2.jpeg" alt="" data-align="center" width="514">
 
 <br>
 
@@ -88,7 +88,7 @@ customexcerpt: "Amazon DynamoDB-A Scalable, Predictably Performant, and Fully Ma
 
 - `Admission control service`：全局流量控制服务。
 
-- 其他比如`PITR`，备份恢复，权限控制，`global table`，`global secondary index`，`transaction`等微服务。<img title="" src="../assets/img/2024-07-23-amazon-dynamodb/3.jpeg" alt="" data-align="center" width="660">
+- 其他比如`PITR`，备份恢复，权限控制，`global table`，`global secondary index`，`transaction`等微服务。<img title="" src="https://wudidapaopao.github.io/assets/img/2024-07-23-amazon-dynamodb/3.jpeg" alt="" data-align="center" width="660">
 
 <br>
 
