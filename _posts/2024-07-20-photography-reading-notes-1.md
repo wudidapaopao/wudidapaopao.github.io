@@ -1,5 +1,5 @@
 ---
-title: 新摄影笔记-读书笔记
+title: 新摄影笔记-读书笔记1
 layout: post
 categories: [Photography]
 image: /assets/img/mountain.jpg
