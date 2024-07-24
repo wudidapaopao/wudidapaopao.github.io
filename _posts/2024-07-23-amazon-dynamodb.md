@@ -3,6 +3,7 @@ title: Amazon DynamoDB论文笔记
 layout: post
 categories: [Paper]
 image: /assets/img/oranges.jpg
+description: "Amazon DynamoDB-A Scalable, Predictably Performant, and Fully Managed"
 ---
 
 # Amazon DynamoDB-A Scalable, Predictably Performant, and Fully Managed
