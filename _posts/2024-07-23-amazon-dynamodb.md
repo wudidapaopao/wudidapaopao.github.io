@@ -299,37 +299,29 @@ image: /assets/img/oranges.jpg
 
 - `MemDS`是纯内存的，使用`perkle tree`作为数据结构。
 
-- `Request router`即使`cache hit`，也会触发从`MemDS`异步刷新缓存，这相当于削峰，
+- `Request router`即使`cache hit`，也会触发从`MemDS`异步刷新缓存，这相当于削峰，避免后续`cache miss`导致的流量陡增。
 
+- `Request router`从`MemDS`拿到的路由信息如果`stale`，请求发给存储节点后，如果存储节点知道正确的位置，那么返回正确位置。如果不知道，`request router`再去请求其他`MemDS`节点。
 
+<br>
 
+# 7. Micro benchmarks
 
-
-
-
-
-
-
+文章还测试了`YCSB`不同`workload`类型(`50% read + 50% update`和`95% read + 5% update`)在不同流量下的延迟变化，结果表明不同流量下请求延迟几乎没有变化。详细数据可见原文。
 
 <br>
 
 
 
+# 8. 小结
 
+- 本文主要介绍了`DynamoDB`作为`DBAAS`的一面，而非`NoSQL database`的一面，其实对于普通开发者，这里的一些实践经验比如充分利用云上基础设施(`S3`)，云上公共微服务，`request router`接入层，多租户资源的分配和流控等，更有意义。反而`paxos`，分布式事务，普通开发者大概率一辈子都不会在工作中去实现或者哪怕是调用。
 
+- `Share-nothing`架构的`NoSQL`存储系统，设计上都很类似，包括`OB`，`TiKV`，`DynamoDB`，都是中心的`metadata` + `sharding` + 副本间`paxos/raft`共识，虽然`OB`每个`paxos group`包含多个`partition`，但随之失去了资源分配的灵活性。早期`Dynamo`还是用`vector clock`提供最终一致性，现在也用`paxos`共识协议了。
 
+- 多租户需要对负载进行抽象，`NoSQL`这点比较容易。负载的抽象也方便`serverless`的计费。
 
-
-
-
-
-DynamoDB关于
-
-
-
-
-
-
+<br>
 
 # 参考资料
 
