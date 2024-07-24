@@ -3,6 +3,7 @@ title: 新摄影笔记-读书笔记
 layout: post
 categories: [Photography]
 image: /assets/img/mountain.jpg
+customexcerpt: "《新摄影笔记》的读书笔记"
 ---
 
 # 0. 什么是摄影
