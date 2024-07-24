@@ -1,8 +1,8 @@
 ---
-title: Amazon DynamoDB: A Scalable, Predictably Performant, and Fully Managed
+title: Amazon DynamoDB-A Scalable, Predictably Performant, and Fully Managed
 NoSQL Database Service
 layout: post
-categories: [Paper reading]
+categories: [Paper]
 image: /assets/img/oranges.jpg
 
 ---
@@ -311,8 +311,6 @@ image: /assets/img/oranges.jpg
 
 <br>
 
-
-
 # 8. 小结
 
 - 本文主要介绍了`DynamoDB`作为`DBAAS`的一面，而非`NoSQL database`的一面，其实对于普通开发者，这里的一些实践经验比如充分利用云上基础设施(`S3`)，云上公共微服务，`request router`接入层，多租户资源的分配和流控等，更有意义。反而`paxos`，分布式事务，普通开发者大概率一辈子都不会在工作中去实现或者哪怕是调用。
@@ -328,19 +326,3 @@ image: /assets/img/oranges.jpg
 - https://www.usenix.org/system/files/atc22-elhemali.pdf
 
 - https://www.modb.pro/db/474656
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
