@@ -1,13 +1,13 @@
 ---
-title: Amazon DynamoDB-A Scalable, Predictably Performant, and Fully Managed
-NoSQL Database Service
+title: Amazon DynamoDB论文笔记
 layout: post
 categories: [Paper]
 image: /assets/img/oranges.jpg
-
 ---
 
-# 1. Introduction
+# Amazon DynamoDB-A Scalable, Predictably Performant, and Fully Managed
+
+# 1. Introduction
 
 `DynamoDB`(`/ˈdaɪ.nəmoʊ/`)在`AWS`内服务海量数据和业务，面对这些挑战，继承了六大基础特性：
 
