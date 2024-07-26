@@ -1,5 +1,5 @@
 ---
-title: 新摄影笔记-读书笔记1
+title: 新摄影笔记-读书笔记(上)
 layout: post
 categories: [Photography]
 image: /assets/img/mountain.jpg
@@ -310,14 +310,4 @@ customexcerpt: "《新摄影笔记》的读书笔记"
 
 <br>
 
-
-
 以上是原书的前两章取景和曝光的笔记，理论有点枯燥琐碎，还是需要实操。
-
-
-
-
-
-
-
-
