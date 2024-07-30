@@ -96,7 +96,7 @@ customexcerpt: "《写给大家看的设计书》的读书笔记"
 
 - 对比一定要强烈，否则无意义。
 
-下图中每一小节的标题使用了相同的字体来强调重复，但颜色不同(多样性的统一) 。
+下图中就使用了小字体和大空白，虽然设计质朴，但依旧吸引扔。
 
 <img title="" src="https://wudidapaopao.github.io/assets/img/2024-07-27-design-reading-notes-1.md/6.jpeg" alt="" width="500">
 
