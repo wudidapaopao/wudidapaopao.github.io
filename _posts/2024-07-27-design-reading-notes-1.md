@@ -77,8 +77,11 @@ customexcerpt: "《写给大家看的设计书》的读书笔记"
 - 有些熟悉的元素，可以只包含元素的一部分，大家看到后也会下意识进行关联。
 
 - 重复还会带来专业性，让读者觉得有人在负责。
-  
-  <img title="" src="https://wudidapaopao.github.io/assets/img/2024-07-27-design-reading-notes-1.md/5.jpeg" alt="" width="300"> 
+
+<br>
+
+下图中每一小节的标题使用了相同的字体来强调重复，但颜色不同(多样性的统一) 。
+<img title="" src="https://wudidapaopao.github.io/assets/img/2024-07-27-design-reading-notes-1.md/5.jpeg" alt="" width="300"> 
 
 <br>
 
@@ -87,6 +90,59 @@ customexcerpt: "《写给大家看的设计书》的读书笔记"
 - 重复使得统一整个作品，增强视觉效果，对多页作品尤其重要。
 
 - 也要避免过多重复一个元素，要注重对比的价值(下一章介绍)。
+
+<br>
+
+# 4. 对比
+
+## 对比的作用
+
+- 造成反差，人眼喜欢看有对比反差的画面，更有意思。
+
+- 对页面进行分层，让读者更容易抓到页面的重点。
+
+<br>
+
+## 如何对比
+
+- 通过字体的颜色，形状，大小是最常用的，其他各式各样的比如线条之间的粗细，小字体和大空白等对比都可以。
+
+- 对比一定要强烈，否则无意义。
+<img title="" src="https://wudidapaopao.github.io/assets/img/2024-07-27-design-reading-notes-1.md/6.jpeg" alt="" width="300">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
