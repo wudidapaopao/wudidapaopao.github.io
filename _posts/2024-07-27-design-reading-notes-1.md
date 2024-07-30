@@ -6,8 +6,6 @@ image: /assets/img/forest-snow.jpg
 customexcerpt: "《写给大家看的设计书》的读书笔记"
 ---
 
-
-
 《写给大家看的设计书》一书可以用来入门平面设计。书里有很多规则，熟悉规则的目的不仅是遵循规则，也为了打破规则。关于打破规则本身有一条规则：在打破规则之前必须清楚规则是什么。
 
 <br>
@@ -20,11 +18,11 @@ customexcerpt: "《写给大家看的设计书》的读书笔记"
 
 下面这张菜单，一眼看上去杂乱无章，看过去完全找不到重点。
 
-<img title="" src="https://wudidapaopao.github.io/assets/img/2024-07-27-design-reading-notes-1.md/1.jpeg" alt="" data-align="left" width="441">
+<img title="" src="https://wudidapaopao.github.io/assets/img/2024-07-27-design-reading-notes-1.md/1.jpeg" alt="" data-align="left" width="300">
 
 按照亲密性的原则进行修改，同一种类的元素聚集在一起，并按聚集设置相应的字体大小，字体类型，字体颜色。适当的缩进也有利于区分不同种类的元素。
 
-<img title="" src="https://wudidapaopao.github.io/assets/img/2024-07-27-design-reading-notes-1.md/2.jpeg" alt="" width="441" data-align="left">
+<img title="" src="https://wudidapaopao.github.io/assets/img/2024-07-27-design-reading-notes-1.md/2.jpeg" alt="" width="300" data-align="left">
 
 <br>
 
@@ -60,51 +58,35 @@ customexcerpt: "《写给大家看的设计书》的读书笔记"
 
 <br>
 
-最后是一个使用对齐规则修改前后的例子。
+最后是一个使用对齐规则修改前后的例子，使用统一的左对齐，让页面变得更整洁，阅读起来也更舒服。
 
-![](https://wudidapaopao.github.io/assets/img/2024-07-27-design-reading-notes-1.md/3.jpeg)
+<img title="" src="https://wudidapaopao.github.io/assets/img/2024-07-27-design-reading-notes-1.md/3.jpeg" alt="" width="300">
 
-![](https://wudidapaopao.github.io/assets/img/2024-07-27-design-reading-notes-1.md/4.jpeg)
+<img title="" src="https://wudidapaopao.github.io/assets/img/2024-07-27-design-reading-notes-1.md/4.jpeg" alt="" width="300">
 
 <br>
 
 # 3. 重复
 
+将页面中的任意元素比如字体，颜色等进行重复：
 
+- 比如将页面结尾和页面开头的字设置为相同字体，引导人的视线再到达页面结尾后，重新回到页面开头。否则，人的视线可能在也面四处游荡。
 
+- 比如一杂志专栏话题包含很多页，每页都有相同元素，让人知道这么多页同属一个专栏。
 
+- 有些熟悉的元素，可以只包含元素的一部分，大家看到后也会下意识进行关联。
 
+- 重复还会带来专业性，让读者觉得有人在负责。
+  
+  <img title="" src="https://wudidapaopao.github.io/assets/img/2024-07-27-design-reading-notes-1.md/5.jpeg" alt="" width="300"> 
 
+<br>
 
+## 总结
 
+- 重复使得统一整个作品，增强视觉效果，对多页作品尤其重要。
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- 也要避免过多重复一个元素，要注重对比的价值(下一章介绍)。
 
 
 
