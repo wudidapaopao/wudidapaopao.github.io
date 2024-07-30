@@ -34,8 +34,6 @@ customexcerpt: "《写给大家看的设计书》的读书笔记"
 
 两端对齐也需要避免，只适用于一行足够长，两端对齐后空袭比较少的情况。
 
-<br>
-
 ### 一些经验
 
 - 页面中如果使用了不同的对齐方式，也要尽量让它们用一条看不见的线联系在一起。
@@ -47,14 +45,16 @@ customexcerpt: "《写给大家看的设计书》的读书笔记"
 - 如果有一条明确的对齐线，比如图片的一边，不要破坏它，让图片的这条边和我们文本对齐的平边挨着。
 
 - 重要的是倾听你的眼睛，眼睛看向哪里，路线是什么，这是最佳路径吗？重要的信息是否都归入了逻辑亲密性中？对齐是否对清晰的表达有帮助？
+  
 ### 总结
 
 - 对齐的根本目的是使页面统一且有条理。
 
 - 页面上的任何元素都能找到与之对齐的其他元素，虽然这两个元素物理位置可能很远。
-最后是一个使用对齐规则修改前后的例子，使用统一的左对齐，让页面变得更整洁，阅读起来也更舒服。
-<img title="" src="https://wudidapaopao.github.io/assets/img/2024-07-27-design-reading-notes-1.md/3.jpeg" alt="" width="500">
-<img title="" src="https://wudidapaopao.github.io/assets/img/2024-07-27-design-reading-notes-1.md/4.jpeg" alt="" width="500">
+  最后是一个使用对齐规则修改前后的例子，使用统一的左对齐，让页面变得更整洁，阅读起来也更舒服。
+  
+  <img title="" src="https://wudidapaopao.github.io/assets/img/2024-07-27-design-reading-notes-1.md/3.jpeg" alt="" width="500">
+  <img title="" src="https://wudidapaopao.github.io/assets/img/2024-07-27-design-reading-notes-1.md/4.jpeg" alt="" width="500">
 
 <br>
 
@@ -69,8 +69,9 @@ customexcerpt: "《写给大家看的设计书》的读书笔记"
 - 有些熟悉的元素，可以只包含元素的一部分，大家看到后也会下意识进行关联。
 
 - 重复还会带来专业性，让读者觉得有人在负责。
-下图中每一小节的标题使用了相同的字体来强调重复，但颜色不同(多样性的统一) 。
-<img title="" src="https://wudidapaopao.github.io/assets/img/2024-07-27-design-reading-notes-1.md/5.jpeg" alt="" width="500"> 
+  下图中每一小节的标题使用了相同的字体来强调重复，但颜色不同(多样性的统一) 。
+  <img title="" src="https://wudidapaopao.github.io/assets/img/2024-07-27-design-reading-notes-1.md/5.jpeg" alt="" width="500"> 
+  
 ### 总结
 
 - 重复使得统一整个作品，增强视觉效果，对多页作品尤其重要。
@@ -87,12 +88,11 @@ customexcerpt: "《写给大家看的设计书》的读书笔记"
 
 - 对页面进行分层，让读者更容易抓到页面的重点。
 
-<br>
-
 ### 如何对比
 
 - 通过字体的颜色，形状，大小是最常用的，其他各式各样的比如线条之间的粗细，小字体和大空白等对比都可以。
 
 - 对比一定要强烈，否则无意义。
-下图中每一小节的标题使用了相同的字体来强调重复，但颜色不同(多样性的统一) 。
+  下图中每一小节的标题使用了相同的字体来强调重复，但颜色不同(多样性的统一) 。
+  
 <img title="" src="https://wudidapaopao.github.io/assets/img/2024-07-27-design-reading-notes-1.md/6.jpeg" alt="" width="500">
