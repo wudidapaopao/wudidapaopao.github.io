@@ -96,10 +96,20 @@ customexcerpt: "《写给大家看的设计书》的读书笔记"
 
 - 对比一定要强烈，否则无意义。
 
-下图中就使用了小字体和大空白，虽然设计质朴，但依旧吸引扔。
+下图中就使用了小字体和大空白，虽然设计质朴，但依旧吸引人。
 
 <img title="" src="https://wudidapaopao.github.io/assets/img/2024-07-27-design-reading-notes-1.md/6.jpeg" alt="" width="500">
 
 <br>
 
-# 5.
+# 5. 颜色运用
+
+### 色轮
+
+红黄蓝是三原色，
+
+色调：纯色。
+
+暗色：
+
+亮色：
