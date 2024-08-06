@@ -1,9 +1,9 @@
 ---
-title: ClickHouse ReplicatedMergeTree  
+title: aaaaaaaaaaaaaaaaaaa
 layout: post
 categories: [ClickHouse]
 image: /assets/img/airplane.jpg
-customexcerpt: "ClickHouse副本同步机制"
+customexcerpt: "bbbbbbbbbb"
 ---
 
 # 1. MergeTree
