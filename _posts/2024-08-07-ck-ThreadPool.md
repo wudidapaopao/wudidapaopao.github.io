@@ -2,7 +2,7 @@
 title: ClickHouse ThreadPool  
 layout: post
 categories: [ClickHouse]
-image: /assets/img/clickhouse-logo.png
+image: /assets/img/airplane.jpg
 customexcerpt: "ClickHouse线程池"
 ---
 
