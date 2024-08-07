@@ -7,7 +7,7 @@ author:
   email: "664920313@qq.com"
 permalink: /:year/:month/:day/:title:output_ext
 
-future: true
+#future: true
 
 #Plugins
 plugins: [jekyll-paginate, jekyll-feed, jekyll-seo-tag, jekyll-sitemap]
