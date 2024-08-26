@@ -1,7 +1,7 @@
 ---
 title: 被讨厌的勇气-读书笔记
 layout: post
-categories: [Others]
+categories: [Growth]
 image: /assets/img/2024-08-12-bei-tao-yan-de-yong-qi-reading-notes/1.jpg
 customexcerpt: "被讨厌的勇气"
 ---
