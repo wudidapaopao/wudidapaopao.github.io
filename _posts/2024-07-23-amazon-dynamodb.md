@@ -1,5 +1,5 @@
 ---
-title: Amazon DynamoDB论文笔记
+title: Amazon DynamoDB-论文笔记
 layout: post
 categories: [Paper]
 image: /assets/img/oranges.jpg
