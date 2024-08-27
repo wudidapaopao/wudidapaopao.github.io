@@ -104,4 +104,12 @@ customexcerpt: "ClickHouse序列化"
   
   - 反序列化后生成`ColumnLowCardinality`。`ColumnLowCardinality`包含`ColumnUnique`和`ColumnVector`。`ColumnUnique`维护字典值，包括字典码到字典值以及字典值到字典码的映射。`ColumnVector`存放的是实际存储的字典码列表。
 
+<br>
+
+# 参考资料
+
+- https://clickhouse.com/docs/en/sql-reference/data-types
+
+- [聊聊ClickHouse中的低基数LowCardinality类型-腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/article/1953125)
+
 
