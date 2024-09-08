@@ -10,6 +10,7 @@ customexcerpt: "ClickHouse VLDB"
 
 单独提一点，`CK`编译之后的可执行文件完全静态链接，没有第三方依赖，对于`C++`来说还是挺方便的。
 <img title="" src="https://wudidapaopao.github.io/assets/img/2024-09-06-ck-lightning-fast-analytics-for-everyone/1.jpeg" alt="" data-align="center" width="660">
+<br>
 
 # 1. Storage Layer
 
