@@ -13,7 +13,7 @@ SI的异常行为：
 + Write Skew。
 + Batch Processing。  
   如果没有只读事务T1，是没有异常行为的。
-+ <img src="https://wudidapaopao.github.io/assets/img/2024-10-22-serializable-snapshot-isolation-in-postgresql/1.jpeg" style="zoom:50%;" />
+  <img src="https://wudidapaopao.github.io/assets/img/2024-10-22-serializable-snapshot-isolation-in-postgresql/1.jpeg" style="zoom:50%;" />
 
 为什么需要Serializable：
 
@@ -156,6 +156,8 @@ PG目前支持在slave上读，但不支持SSI的读。未来可以：
 + 引入了新的in-memory的提供SIREAD Lock的SSI Lock Manager，追踪RW依赖。
 + 尽可能让内存使用控制在合理范围，比如summarize committed transaction。
 + 针对只读事务做优化，比如获取安全的读快照。
+
+
 
 # 参考资料
 
