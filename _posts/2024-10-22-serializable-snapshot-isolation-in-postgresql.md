@@ -2,7 +2,7 @@
 title: Serializable Snapshot Isolation in PostgreSQL
 layout: post
 categories: [Paper]
-image: /assets/img/postgresql-logo.jpeg
+image: /assets/img/postgresql-logo.jpg
 customexcerpt: "PostgreSQL SSI"
 ---
 
@@ -21,7 +21,7 @@ SI的异常行为：
 + 方便应用开发者避免异常行为，这些异常行为难以发现，有时是静默错误。
 + 提前分析所有执行的事务，复杂度太大，且无法处理ad hoc查询。
 
-
+<br>
 
 # 2. Serializable Snaphot Isolation
 
@@ -49,7 +49,7 @@ SI的serialization graph：没有cycle才是serializable。
 
 PSSI(Precisely SSI)，是除了rw，也追踪ww，wr依赖以确定是否有cycle的完全准确的判定，但是需要额外的付出更多内存开销，所以不被采用。
 
-
+<br>
 
 # 3. Read only Optimization
 
@@ -61,7 +61,7 @@ PSSI(Precisely SSI)，是除了rw，也追踪ww，wr依赖以确定是否有cycl
 
 基于上述推论，当一个只读事务开始时，可以延迟等待获取一个安全的读版本(小于该读版本的事务都已经提交)，那么该读事务可以安全地执行，不需要去进行SSI相关的依赖检查。
 
-
+<br>
 
 # 4. Implementing SSI In PostgresSQL
 
@@ -103,7 +103,7 @@ PG中的锁：
 
 所以当危险结构出现时，不会立刻重试事务。而是当事务提交时，去检查是否存在危险结构。
 
-
+<br>
 
 # 5. Memory Usage Mitigation
 
@@ -117,7 +117,7 @@ SSI降低内存开销的措施：
    当活跃事务只剩下只读事务时，所有的`SIREAD Lock`都可以清理，因为之后不会再有并发事务发生RW冲突，需要用到`SIREAD Lock`的情况。`SIREAD Lock`是用来发生写操作时，查看并发事务是否有对应`SIREAD Lock`的情况。此外，当活跃事务只剩下只读事务，对于`T1->T2`且T2已经提交的情况，对于`T2`来说，T1的入边可以删掉，因为已经不可能出现并发事务T3，并且T3写了T2读过的记录。
 4. Summarizing Committed Transactions：为了避免维护过多已经提交事务的`dependency graph`和`SIREAD Lock`，对于可以替代的情况，会将多个已提交事务用一个代替。
 
-
+<br>
 
 # 6. Feature Interactions
 
@@ -148,7 +148,7 @@ PG目前支持在slave上读，但不支持SSI的读。未来可以：
 
 目前PG只有B+Tree支持`Predicate Lock`，其他的index想要获取`Predicate Lock`只能退化到表锁。
 
-
+<br>
 
 # 7. Conclusion
 
@@ -158,7 +158,7 @@ PG目前支持在slave上读，但不支持SSI的读。未来可以：
 + 尽可能让内存使用控制在合理范围，比如summarize committed transaction。
 + 针对只读事务做优化，比如获取安全的读快照。
 
-
+<br>
 
 # 参考资料
 
