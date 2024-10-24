@@ -1,3 +1,11 @@
+---
+title: Serializable Snapshot Isolation in PostgreSQL
+layout: post
+categories: [Paper]
+image: /assets/img/postgresql-logo.jpeg
+customexcerpt: "PostgreSQL SSI"
+---
+
 # Overview
 
 # 1. Snaphot Isolation Versus Serializable
