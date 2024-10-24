@@ -152,4 +152,5 @@ PG目前支持在slave上读，但不支持SSI的读。未来可以：
 
 # 参考资料
 
-1. [https://drkp.net/papers/ssi-vldb12.pdf](https://drkp.net/papers/ssi-vldb12.pdf)
+1. https://drkp.net/papers/ssi-vldb12.pdf
+
