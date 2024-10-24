@@ -13,7 +13,8 @@ SI的异常行为：
 + Write Skew。
 + Batch Processing。  
   如果没有只读事务T1，是没有异常行为的。
-  <img src="https://wudidapaopao.github.io/assets/img/2024-10-22-serializable-snapshot-isolation-in-postgresql/1.jpeg" style="zoom:50%;" />
+
+<img title="" src="https://wudidapaopao.github.io/assets/img/2024-10-22-serializable-snapshot-isolation-in-postgresql/1.jpeg" alt="" data-align="center" width="660">
 
 为什么需要Serializable：
 
@@ -28,11 +29,11 @@ SSI是基于SI实现的serializable，性能比strict two phase locking好。
 
 SI的serialization graph：没有cycle才是serializable。
 
-<img src="https://wudidapaopao.github.io/assets/img/2024-10-22-serializable-snapshot-isolation-in-postgresql/2.jpeg" style="zoom:50%;" />
+<img title="" src="https://wudidapaopao.github.io/assets/img/2024-10-22-serializable-snapshot-isolation-in-postgresql/2.jpeg" alt="" data-align="center" width="660">
 
 **SI的anomalies对应的serialization history graph一定包含两条相邻的rw edge，且T3在这个cycle中是第一个commit的。**
 
-<img src="https://wudidapaopao.github.io/assets/img/2024-10-22-serializable-snapshot-isolation-in-postgresql/3.jpeg" style="zoom:50%;" />
+<img title="" src="https://wudidapaopao.github.io/assets/img/2024-10-22-serializable-snapshot-isolation-in-postgresql/3.jpeg" alt="" data-align="center" width="660">
 
 ## SSI
 
@@ -44,7 +45,7 @@ SI的serialization graph：没有cycle才是serializable。
 
 对于下图的危险结构，当T1或者T2的commit time小于T3时，则认为没有必要abort事务，可以降低误判的概率。
 
-<img src="https://wudidapaopao.github.io/assets/img/2024-10-22-serializable-snapshot-isolation-in-postgresql/4.jpeg" style="zoom:50%;" />
+<img title="" src="https://wudidapaopao.github.io/assets/img/2024-10-22-serializable-snapshot-isolation-in-postgresql/4.jpeg" alt="" data-align="center" width="300">
 
 PSSI(Precisely SSI)，是除了rw，也追踪ww，wr依赖以确定是否有cycle的完全准确的判定，但是需要额外的付出更多内存开销，所以不被采用。
 
@@ -54,7 +55,7 @@ PSSI(Precisely SSI)，是除了rw，也追踪ww，wr依赖以确定是否有cycl
 
 我们可以知道， 当T1为只读事务时，T3的提交版本必须小于T1的读版本，否则T3和T1之间无法形成依赖，从而无法成环(注意，如果是危险结构，T3的提交版本一定是最小的)。
 
-<img src="https://wudidapaopao.github.io/assets/img/2024-10-22-serializable-snapshot-isolation-in-postgresql/4.jpeg" style="zoom:50%;" />
+<img title="" src="https://wudidapaopao.github.io/assets/img/2024-10-22-serializable-snapshot-isolation-in-postgresql/4.jpeg" alt="" data-align="center" width="300">
 
 ## Deferrable Transaction
 
@@ -92,7 +93,7 @@ PG中的锁：
 
 ## Resolving Conflicts：Safe Retry
 
-<img src="https://wudidapaopao.github.io/assets/img/2024-10-22-serializable-snapshot-isolation-in-postgresql/4.jpeg" style="zoom:50%;" />
+<img title="" src="https://wudidapaopao.github.io/assets/img/2024-10-22-serializable-snapshot-isolation-in-postgresql/4.jpeg" alt="" data-align="center" width="300">
 
 当出现如上危险结构时，需要选择一个事务abort，选择的策略：
 
@@ -122,7 +123,7 @@ SSI降低内存开销的措施：
 
 ## Two-Phase Commit
 
-<img src="https://wudidapaopao.github.io/assets/img/2024-10-22-serializable-snapshot-isolation-in-postgresql/5.jpeg" style="zoom:50%;" />
+<img title="" src="https://wudidapaopao.github.io/assets/img/2024-10-22-serializable-snapshot-isolation-in-postgresql/5.jpeg" alt="" data-align="center" width="300">
 
 + Prepare时，SIREAD Lock也要持久化，以便在崩溃回复时重建。
 + `dependency graph`过大不方便持久化，且prepare之后也会变，所以保守地认为崩溃回复后认为prepared的事务有in的RW冲突，也有out的RW冲突。
