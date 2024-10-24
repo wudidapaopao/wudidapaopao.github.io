@@ -6,15 +6,14 @@ image: /assets/img/postgresql-logo.jpeg
 customexcerpt: "PostgreSQL SSI"
 ---
 
-# Overview
-
 # 1. Snaphot Isolation Versus Serializable
 
 SI的异常行为：
 
 + Write Skew。
 + Batch Processing。  
-  如果没有只读事务T1，是没有异常行为的。![](https://cdn.nlark.com/yuque/0/2023/png/486985/1684300672358-8959ff0f-cc0b-49f1-b68e-82066bce0771.png)
+  如果没有只读事务T1，是没有异常行为的。
++ <img src="https://wudidapaopao.github.io/assets/img/2024-10-22-serializable-snapshot-isolation-in-postgresql/1.jpeg" style="zoom:50%;" />
 
 为什么需要Serializable：
 
@@ -23,17 +22,17 @@ SI的异常行为：
 
 
 
-# Serializable Snaphot Isolation
+# 2. Serializable Snaphot Isolation
 
 SSI是基于SI实现的serializable，性能比strict two phase locking好。
 
 SI的serialization graph：没有cycle才是serializable。
 
-![](https://cdn.nlark.com/yuque/0/2023/png/486985/1684387491376-b237d3c9-7e83-4d39-a6f9-3d4a800360a6.png)
+<img src="https://wudidapaopao.github.io/assets/img/2024-10-22-serializable-snapshot-isolation-in-postgresql/2.jpeg" style="zoom:50%;" />
 
 **SI的anomalies对应的serialization history graph一定包含两条相邻的rw edge，且T3在这个cycle中是第一个commit的。**
 
-![](https://cdn.nlark.com/yuque/0/2023/png/486985/1684388149513-935604c7-6cc6-4941-a73e-ea7f28b2df76.png)
+<img src="https://wudidapaopao.github.io/assets/img/2024-10-22-serializable-snapshot-isolation-in-postgresql/3.jpeg" style="zoom:50%;" />
 
 ## SSI
 
@@ -45,21 +44,25 @@ SI的serialization graph：没有cycle才是serializable。
 
 对于下图的危险结构，当T1或者T2的commit time小于T3时，则认为没有必要abort事务，可以降低误判的概率。
 
-![](https://cdn.nlark.com/yuque/0/2023/png/486985/1684716519913-2f57afc6-462b-4153-8bbb-5bc054cb2d86.png)
+<img src="https://wudidapaopao.github.io/assets/img/2024-10-22-serializable-snapshot-isolation-in-postgresql/4.jpeg" style="zoom:50%;" />
 
 PSSI(Precisely SSI)，是除了rw，也追踪ww，wr依赖以确定是否有cycle的完全准确的判定，但是需要额外的付出更多内存开销，所以不被采用。
 
-# Read only Optimization
+
+
+# 3. Read only Optimization
 
 我们可以知道， 当T1为只读事务时，T3的提交版本必须小于T1的读版本，否则T3和T1之间无法形成依赖，从而无法成环(注意，如果是危险结构，T3的提交版本一定是最小的)。
 
-![](https://cdn.nlark.com/yuque/0/2023/png/486985/1684716519913-2f57afc6-462b-4153-8bbb-5bc054cb2d86.png)
+<img src="https://wudidapaopao.github.io/assets/img/2024-10-22-serializable-snapshot-isolation-in-postgresql/4.jpeg" style="zoom:50%;" />
 
 ## Deferrable Transaction
 
 基于上述推论，当一个只读事务开始时，可以延迟等待获取一个安全的读版本(小于该读版本的事务都已经提交)，那么该读事务可以安全地执行，不需要去进行SSI相关的依赖检查。
 
-# Implementing SSI In PostgresSQL
+
+
+# 4. Implementing SSI In PostgresSQL
 
 ## PG Background
 
@@ -89,7 +92,7 @@ PG中的锁：
 
 ## Resolving Conflicts：Safe Retry
 
-![](https://cdn.nlark.com/yuque/0/2023/png/486985/1684716519913-2f57afc6-462b-4153-8bbb-5bc054cb2d86.png)
+<img src="https://wudidapaopao.github.io/assets/img/2024-10-22-serializable-snapshot-isolation-in-postgresql/4.jpeg" style="zoom:50%;" />
 
 当出现如上危险结构时，需要选择一个事务abort，选择的策略：
 
@@ -99,7 +102,9 @@ PG中的锁：
 
 所以当危险结构出现时，不会立刻重试事务。而是当事务提交时，去检查是否存在危险结构。
 
-# Memory Usage Mitigation
+
+
+# 5. Memory Usage Mitigation
 
 SSI降低内存开销的措施：
 
@@ -111,11 +116,13 @@ SSI降低内存开销的措施：
    当活跃事务只剩下只读事务时，所有的`SIREAD Lock`都可以清理，因为之后不会再有并发事务发生RW冲突，需要用到`SIREAD Lock`的情况。`SIREAD Lock`是用来发生写操作时，查看并发事务是否有对应`SIREAD Lock`的情况。此外，当活跃事务只剩下只读事务，对于`T1->T2`且T2已经提交的情况，对于`T2`来说，T1的入边可以删掉，因为已经不可能出现并发事务T3，并且T3写了T2读过的记录。
 4. Summarizing Committed Transactions：为了避免维护过多已经提交事务的`dependency graph`和`SIREAD Lock`，对于可以替代的情况，会将多个已提交事务用一个代替。
 
-# Feature Interactions
+
+
+# 6. Feature Interactions
 
 ## Two-Phase Commit
 
-![](https://cdn.nlark.com/yuque/0/2023/png/486985/1685034359497-55e3133e-bf19-4a98-b708-2fd6eaee2ce2.png)
+<img src="https://wudidapaopao.github.io/assets/img/2024-10-22-serializable-snapshot-isolation-in-postgresql/5.jpeg" style="zoom:50%;" />
 
 + Prepare时，SIREAD Lock也要持久化，以便在崩溃回复时重建。
 + `dependency graph`过大不方便持久化，且prepare之后也会变，所以保守地认为崩溃回复后认为prepared的事务有in的RW冲突，也有out的RW冲突。
@@ -140,9 +147,9 @@ PG目前支持在slave上读，但不支持SSI的读。未来可以：
 
 目前PG只有B+Tree支持`Predicate Lock`，其他的index想要获取`Predicate Lock`只能退化到表锁。
 
-# Evaluation
 
-# Conclusion
+
+# 7. Conclusion
 
 这是第一个在之前不支持serializable的数据库中实现SSI的产品：
 
